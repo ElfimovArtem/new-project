@@ -1,0 +1,17 @@
+.registration-page {
+  width: 400px;
+  margin: 0 auto;
+  border: 2px solid #8c8c8c;
+  border-radius: 10px;
+  position: relative;
+  top: 25%;
+  background: #f4f4f4;
+
+  &__title {
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    padding: 25px 0 10px;
+    user-select: none;
+  }
+}

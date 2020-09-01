@@ -1,0 +1,19 @@
+.control__registration-btn {
+  border: none;
+  background: inherit;
+  width: 35%;
+  font-size: 16px;
+  outline: none;
+  user-select: none;
+  font-weight: 700;
+
+  &:hover {
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 -2px #8c8c8c inset;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}
