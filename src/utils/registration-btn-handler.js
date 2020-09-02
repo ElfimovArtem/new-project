@@ -1,5 +1,3 @@
-import { registration } from '../constants';
+import { authCheck } from '../redux';
 
-export const registrationBtnHandler = (el) => {
-  registration.auth = el.id === registration.signInId;
-};
+export const registrationBtnHandler = (el, dispatch) => dispatch(authCheck(el));
