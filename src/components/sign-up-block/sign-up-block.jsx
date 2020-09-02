@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { inputCreator, onChangeInputHandler, signUpBtnHandler } from '../../utils';
-import { signInitialState } from '../../constants';
 import { useDispatch } from 'react-redux';
+import { Input } from '../input';
+import { onChangeInputHandler, signUpBtnHandler } from '../../utils';
+import { signInitialState } from '../../constants';
 import { signUpBtnClick } from '../../redux';
 import './sign-up-block-styles.scss';
 
@@ -15,30 +16,30 @@ export const SignUpBlock = () => {
   return (
     <section className="sign-up-block">
       <h3 className="sign-up-block__title">Sign up</h3>
-      {inputCreator(
-        "sign-up-block__input",
-        "First name",
-        firstName,
-        (ev) => onChangeInputHandler(ev, setFirstName)
-      )}
-      {inputCreator(
-        "sign-up-block__input",
-        "E-mail",
-        email,
-        (ev) => onChangeInputHandler(ev, setEmail)
-      )}
-      {inputCreator(
-        "sign-up-block__input",
-        "Password",
-        password,
-        (ev) => onChangeInputHandler(ev, setPassword)
-      )}
-      {inputCreator(
-        "sign-up-block__input",
-        "Confirm password",
-        confirmPassword,
-        (ev) => onChangeInputHandler(ev, setConfirmPassword)
-      )}
+      <Input
+        className="sign-up-block__input"
+        placeholder="First name"
+        name={firstName}
+        onChange={(ev) => onChangeInputHandler(ev, setFirstName)}
+      />
+      <Input
+        className="sign-up-block__input"
+        placeholder="E-mail"
+        name={email}
+        onChange={(ev) => onChangeInputHandler(ev, setEmail)}
+      />
+      <Input
+        className="sign-up-block__input"
+        placeholder="Password"
+        name={password}
+        onChange={(ev) => onChangeInputHandler(ev, setPassword)}
+      />
+      <Input
+        className="sign-up-block__input"
+        placeholder="Confirm password"
+        name={confirmPassword}
+        onChange={(ev) => onChangeInputHandler(ev, setConfirmPassword)}
+      />
       <button
         type="button"
         className="sign-up-block__btn"
