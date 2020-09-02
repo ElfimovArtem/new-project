@@ -1,7 +1,5 @@
-import { signUpBtnClick } from '../redux/actions';
-
-export const signUpBtnHandler = (values, setters, dispatch) => {
-  dispatch(signUpBtnClick(
+export const signUpBtnHandler = (values, setters, dispatch, action) => {
+  dispatch(action(
     values[0],
     values[1],
     values[2],

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { inputCreator, onChangeInputHandler, signUpBtnHandler } from '../../utils';
 import { signInitialState } from '../../constants';
 import { useDispatch } from 'react-redux';
+import { signUpBtnClick } from '../../redux';
 import './sign-up-block-styles.scss';
 
 export const SignUpBlock = () => {
@@ -49,7 +50,9 @@ export const SignUpBlock = () => {
             confirmPassword
           ],
           [setFirstName, setEmail, setPassword, setConfirmPassword],
-          signDispatch)}
+          signDispatch,
+          signUpBtnClick
+        )}
       >Sign up</button>
     </section>
   );
