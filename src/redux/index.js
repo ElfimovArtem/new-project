@@ -1,2 +1,2 @@
 export { store } from './store';
-export { authCheck } from './actions';
+export { registrationControlCheck } from './actions';

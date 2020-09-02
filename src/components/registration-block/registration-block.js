@@ -3,7 +3,7 @@ import { registrationBlockSelection } from '../../utils';
 import { useSelector } from 'react-redux';
 
 export const RegistrationBlock = () => {
-  const auth = useSelector(state => state.auth);
+  const auth = useSelector(state => state.authData.auth);
 
   return (
     <section className="registration-block" id="registration-block">

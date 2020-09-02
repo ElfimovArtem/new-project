@@ -3,10 +3,18 @@ export const registration = {
   signInId: 'sign-in',
 };
 
-export const initialState = {
-  auth: false,
-  user: {
+export const authInitialState = {
+  auth: false
+};
+
+export const signInitialState = {
+  userSignUp: {
     firstName: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  },
+  userSignIn: {
     email: '',
     password: ''
   }
