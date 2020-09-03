@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Input } from '../input';
-import { onChangeInputHandler, signUpBtnHandler } from '../../utils';
-import { signInitialState } from '../../constants';
-import { signUpBtnClick } from '../../redux';
+import { onChangeInputHandler } from '../../utils';
+import { signUpAction } from '../../redux';
 import './sign-up-block-styles.scss';
 
 export const SignUpBlock = () => {
-  const signDispatch = useDispatch();
-  const [firstName, setFirstName] = useState(signInitialState.userSignUp.firstName);
-  const [email, setEmail] = useState(signInitialState.userSignUp.email);
-  const [password, setPassword] = useState(signInitialState.userSignUp.password);
-  const [confirmPassword, setConfirmPassword] = useState(signInitialState.userSignUp.confirmPassword);
+  const dispatch = useDispatch();
+  const [firstName, setFirstName] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [confirmPassword, setConfirmPassword] = useState(null);
+
+  const handleSignUp = () => dispatch(signUpAction({ email, password, confirmPassword, firstName }));
 
   return (
     <section className="sign-up-block">
@@ -20,40 +21,30 @@ export const SignUpBlock = () => {
         className="sign-up-block__input"
         placeholder="First name"
         name={firstName}
-        onChange={(ev) => onChangeInputHandler(ev, setFirstName)}
+        onChange={onChangeInputHandler(setFirstName)}
       />
       <Input
         className="sign-up-block__input"
         placeholder="E-mail"
         name={email}
-        onChange={(ev) => onChangeInputHandler(ev, setEmail)}
+        onChange={onChangeInputHandler(setEmail)}
       />
       <Input
         className="sign-up-block__input"
         placeholder="Password"
         name={password}
-        onChange={(ev) => onChangeInputHandler(ev, setPassword)}
+        onChange={onChangeInputHandler(setPassword)}
       />
       <Input
         className="sign-up-block__input"
         placeholder="Confirm password"
         name={confirmPassword}
-        onChange={(ev) => onChangeInputHandler(ev, setConfirmPassword)}
+        onChange={onChangeInputHandler(setConfirmPassword)}
       />
       <button
         type="button"
         className="sign-up-block__btn"
-        onClick={() => signUpBtnHandler(
-          [
-            firstName,
-            email,
-            password,
-            confirmPassword
-          ],
-          [setFirstName, setEmail, setPassword, setConfirmPassword],
-          signDispatch,
-          signUpBtnClick
-        )}
+        onClick={handleSignUp}
       >Sign up</button>
     </section>
   );

@@ -1,15 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Input } from '../input';
-import { onChangeInputHandler, signUpBtnHandler } from '../../utils';
-import { signInitialState } from '../../constants';
-import { signInBtnClick } from '../../redux';
+import { onChangeInputHandler } from '../../utils';
+import { signInAction } from '../../redux';
 import './sign-in-block-styles.scss';
 
 export const SignInBlock = () => {
-  const signDispatch = useDispatch();
-  const [email, setEmail] = useState(signInitialState.userSignIn.email);
-  const [password, setPassword] = useState(signInitialState.userSignIn.password);
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const handleSignIn = () => dispatch(signInAction({ email, password }));
 
   return (
     <section className="sign-in-block">
@@ -18,26 +19,18 @@ export const SignInBlock = () => {
         className="sign-in-block__input"
         placeholder="E-mail"
         name={email}
-        onChange={(ev) => onChangeInputHandler(ev, setEmail)}
+        onChange={onChangeInputHandler(setEmail)}
       />
       <Input
         className="sign-in-block__input"
         placeholder="Password"
         name={password}
-        onChange={(ev) => onChangeInputHandler(ev, setPassword)}
+        onChange={onChangeInputHandler(setPassword)}
       />
       <button
         type="button"
         className="sign-up-block__btn"
-        onClick={() => signUpBtnHandler(
-          [
-            email,
-            password,
-          ],
-          [setEmail, setPassword],
-          signDispatch,
-          signInBtnClick
-        )}
+        onClick={handleSignIn}
       >Sign in</button>
     </section>
   );
