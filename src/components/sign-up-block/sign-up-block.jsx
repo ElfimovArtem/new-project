@@ -13,32 +13,32 @@ export const SignUpBlock = () => {
   const [confirmPassword, setConfirmPassword] = useState(null);
 
   const handleSignUp = () => dispatch(signUpAction({ email, password, confirmPassword, firstName }));
-
+//обнулить инпуты
   return (
     <section className="sign-up-block">
       <h3 className="sign-up-block__title">Sign up</h3>
       <Input
         className="sign-up-block__input"
         placeholder="First name"
-        name={firstName}
+        value={firstName}
         onChange={onChangeInputHandler(setFirstName)}
       />
       <Input
         className="sign-up-block__input"
         placeholder="E-mail"
-        name={email}
+        value={email}
         onChange={onChangeInputHandler(setEmail)}
       />
       <Input
         className="sign-up-block__input"
         placeholder="Password"
-        name={password}
+        value={password}
         onChange={onChangeInputHandler(setPassword)}
       />
       <Input
         className="sign-up-block__input"
         placeholder="Confirm password"
-        name={confirmPassword}
+        value={confirmPassword}
         onChange={onChangeInputHandler(setConfirmPassword)}
       />
       <button

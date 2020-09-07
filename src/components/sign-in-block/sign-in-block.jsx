@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Input } from '../input';
 import { onChangeInputHandler } from '../../utils';
 import { signInAction } from '../../redux';
+import { Input } from '../input';
 import './sign-in-block-styles.scss';
 
 export const SignInBlock = () => {
@@ -10,7 +10,7 @@ export const SignInBlock = () => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
-  const handleSignIn = () => dispatch(signInAction({ email, password }));
+  const handleSignIn = () => dispatch(signInAction({ email, password })); //обнулить инпуты
 
   return (
     <section className="sign-in-block">
@@ -18,13 +18,13 @@ export const SignInBlock = () => {
       <Input
         className="sign-in-block__input"
         placeholder="E-mail"
-        name={email}
+        value={email}
         onChange={onChangeInputHandler(setEmail)}
       />
       <Input
         className="sign-in-block__input"
         placeholder="Password"
-        name={password}
+        value={password}
         onChange={onChangeInputHandler(setPassword)}
       />
       <button
