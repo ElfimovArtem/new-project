@@ -1,1 +1,1 @@
-export const onChangeInputHandler = (ev, setter) => setter(ev.target.value);
+export const onChangeInputHandler = (setter) => (e) => setter(e.target.value);

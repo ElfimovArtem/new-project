@@ -1,11 +1,12 @@
 import React from 'react';
 
-export const inputCreator = (className, placeholder, value, onChangeHandler) => (
+export const Input = ({ className, placeholder, value, onChange, ...rest }) => (
   <input
+    {...rest}
     className={className}
     type="text"
     placeholder={placeholder}
     value={value}
-    onChange={onChangeHandler}
+    onChange={onChange}
   />
 );

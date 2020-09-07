@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux'
-import { registrationControlReducer } from './registration-control-reducer';
-import { signReducer } from './sign-reducer';
+import { AUTH_STORE_KEY } from './constants';
+import { authReducer } from './auth-reducer';
 
 export const rootReducer = combineReducers({
-  authData: registrationControlReducer,
-  signData: signReducer
+  [AUTH_STORE_KEY]: authReducer
 });
