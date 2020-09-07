@@ -7,13 +7,19 @@ import './sign-up-block-styles.scss';
 
 export const SignUpBlock = () => {
   const dispatch = useDispatch();
-  const [firstName, setFirstName] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [confirmPassword, setConfirmPassword] = useState(null);
+  const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSignUp = () => dispatch(signUpAction({ email, password, confirmPassword, firstName }));
-//обнулить инпуты
+  const handleSignUp = () => {
+      dispatch(signUpAction({ email, password, confirmPassword, firstName }));
+      setFirstName('');
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
+  }
+
   return (
     <section className="sign-up-block">
       <h3 className="sign-up-block__title">Sign up</h3>

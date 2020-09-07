@@ -7,10 +7,14 @@ import './sign-in-block-styles.scss';
 
 export const SignInBlock = () => {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleSignIn = () => dispatch(signInAction({ email, password })); //обнулить инпуты
+  const handleSignIn = () => {
+      dispatch(signInAction({ email, password }));
+      setEmail('');
+      setPassword('');
+  }
 
   return (
     <section className="sign-in-block">
