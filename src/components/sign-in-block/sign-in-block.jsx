@@ -18,12 +18,14 @@ export const SignInBlock = () => {
       <Input
         className="sign-in-block__input"
         placeholder="E-mail"
+        type="text"
         value={email}
         onChange={onChangeInputHandler(setEmail)}
       />
       <Input
         className="sign-in-block__input"
         placeholder="Password"
+        type="password"
         value={password}
         onChange={onChangeInputHandler(setPassword)}
       />

@@ -20,6 +20,7 @@ export const SignUpBlock = () => {
       <Input
         className="sign-up-block__input"
         placeholder="First name"
+        type="text"
         value={firstName}
         onChange={onChangeInputHandler(setFirstName)}
       />
@@ -27,18 +28,21 @@ export const SignUpBlock = () => {
         className="sign-up-block__input"
         placeholder="E-mail"
         value={email}
+        type="text"
         onChange={onChangeInputHandler(setEmail)}
       />
       <Input
         className="sign-up-block__input"
         placeholder="Password"
         value={password}
+        type="password"
         onChange={onChangeInputHandler(setPassword)}
       />
       <Input
         className="sign-up-block__input"
         placeholder="Confirm password"
         value={confirmPassword}
+        type="password"
         onChange={onChangeInputHandler(setConfirmPassword)}
       />
       <button
