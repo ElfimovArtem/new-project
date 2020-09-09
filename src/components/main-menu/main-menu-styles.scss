@@ -1,0 +1,42 @@
+.main-menu {
+  width: 60%;
+  height: 40px;
+  margin: 0 auto;
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    border: 3px solid #8c8c8c;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+
+    &-item {
+      list-style-type: none;
+      width: 25%;
+      text-align: center;
+      line-height: 2.5;
+      font-weight: 700;
+
+      &:nth-child(1) {
+        border-radius: 5px 0 0 5px;
+      }
+
+      &:nth-child(4) {
+        border-radius: 0 5px 5px 0;
+      }
+
+      &:hover {
+        background: #b5b5b5;
+        transition: .3s;
+        cursor: pointer;
+      }
+
+      &:active {
+        background: #e8e8e8;
+      }
+    }
+  }
+}

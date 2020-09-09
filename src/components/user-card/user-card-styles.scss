@@ -1,0 +1,51 @@
+.user-card {
+  display: flex;
+  justify-content: space-around;
+  height: 210px;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid #8c8c8c;
+  user-select: none;
+
+  &:nth-last-child(1) {
+    border-bottom: none;
+  }
+
+  &__label {
+    width: 20%;
+    height: 50%;
+    padding-top: 10px;
+    font-size: 20px;
+  }
+
+  &__balance {
+    width: 30%;
+    height: 50%;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 3.5;
+  }
+
+  &__options {
+    width: 10%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+
+    &-icon {
+      margin: 0 auto;
+
+      &:hover {
+        cursor: pointer;
+        color: #404040;
+        transition: .2s;
+      }
+
+      &:active {
+        transform: scale(0.97, 0.97);
+      }
+    }
+  }
+}
