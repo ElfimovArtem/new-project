@@ -1,4 +1,5 @@
 import React from 'react';
+import './credit-item-styles.scss';
 
 export const CreditItem = ({ title, percent, text }) => (
   <section className="payment-item">

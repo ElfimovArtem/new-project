@@ -1,0 +1,62 @@
+.payment-item {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  border-bottom: 1px solid #8c8c8c;
+
+  &:nth-last-child(1) {
+    border-bottom: none;
+  }
+
+  &__name,
+  &__request {
+    width: 20%;
+    height: 50%;
+    font-weight: 600;
+  }
+
+  &__description {
+    width: 60%;
+    height: 50%;
+    padding: 30px;
+    font-size: 15px;
+  }
+
+  &__name {
+    border-right: 1px solid #8c8c8c;
+
+    &-title {
+      margin: 0;
+    }
+
+    &-percent {
+      font-size: 30px;
+      margin: 18px 0 0 0;
+      font-weight: 900;
+    }
+  }
+
+  &__request {
+    border-left: 1px solid #8c8c8c;
+
+    &-label {
+      margin: 0;
+    }
+
+    &-icon {
+      font-size: 30px;
+      margin-top: 20px;
+
+      &:hover {
+        cursor: pointer;
+        color: #5b5b5b;
+      }
+      &:active {
+        transform: scale(0.98, 0.98);
+        transition: .2s;
+      }
+    }
+  }
+}
