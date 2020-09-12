@@ -10,5 +10,10 @@ export const CreditsContainer = () => (
       percent="15%"
       text={content.consumerCreditText}
     />
+    <CreditItem
+      title="Mortgage"
+      percent="8%"
+      text={content.mortgageText}
+    />
   </section>
 );
